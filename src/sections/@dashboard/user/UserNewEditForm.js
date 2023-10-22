@@ -74,7 +74,7 @@ export default function UserNewEditForm({ isEdit = false, currentCandidate }) {
 
   const defaultValues = useMemo(
     () => ({
-      name: currentCandidate?.name || '',
+      name: currentCandidate?.firstName || '',
       email: currentCandidate?.email || '',
       phoneNumber: currentCandidate?.phoneNumber || '',
       address: currentCandidate?.address || '',
@@ -150,7 +150,7 @@ export default function UserNewEditForm({ isEdit = false, currentCandidate }) {
 
       if (isEdit) {
         response = await axios.put(
-          `https://medi-server.onrender.com/api/v1/candidates/${currentCandidate._id}`,
+          `https://medi-server.onrender.com/api/v1/candidates/${currentCandidate.firstName}`,
           newData
         );
         successMessage = 'Updated Successfully';

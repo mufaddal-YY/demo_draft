@@ -29,7 +29,7 @@ UserTableRow.propTypes = {
 };
 
 export default function UserTableRow({ row, selected, onEditRow, onSelectRow, onDeleteRow }) {
-  const { name, email, phoneNumber, city, status } = row;
+  const { firstName, email, phoneNumber, address, gender } = row;
 
   const [openConfirm, setOpenConfirm] = useState(false);
 
@@ -60,10 +60,10 @@ export default function UserTableRow({ row, selected, onEditRow, onSelectRow, on
 
         <TableCell>
           <Stack direction="row" alignItems="center" spacing={2}>
-            {/* <Avatar alt={name} src={avatarUrl} /> */}
+           
 
             <Typography variant="subtitle2" noWrap>
-              {name}
+              {firstName}
             </Typography>
           </Stack>
         </TableCell>
@@ -74,17 +74,17 @@ export default function UserTableRow({ row, selected, onEditRow, onSelectRow, on
           {phoneNumber}
         </TableCell>
 
-        <TableCell align="center">
-          {city}
+        <TableCell align="left">
+          {address}
         </TableCell>
 
         <TableCell align="left">
           <Label
             variant="soft"
-            color={(status === 'banned' && 'error') || 'success'}
+            color={(gender === 'banned' && 'error') || 'success'}
             sx={{ textTransform: 'capitalize' }}
           >
-            {status}
+            {gender}
           </Label>
           
         </TableCell>

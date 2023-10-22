@@ -15,7 +15,7 @@ UserEditPage.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 export default function UserEditPage() {
   const { themeStretch } = useSettingsContext();
   const {
-    query: { name },
+    query: { firstName },
   } = useRouter();
 
   const [candidates, setCandidate] = useState([]);
@@ -37,10 +37,10 @@ export default function UserEditPage() {
 
   useEffect(() => {
     if (candidates.length > 0) {
-      const foundCandidate = candidates.find((candidate) => paramCase(candidate.name) === name);
+      const foundCandidate = candidates.find((candidate) => paramCase(candidate.firstName) === firstName);
       setCurrentCandidate(foundCandidate);
     }
-  }, [candidates, name]);
+  }, [candidates, firstName]);
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function UserEditPage() {
               name: 'Candidate',
               href: PATH_DASHBOARD.general.database,
             },
-            { name: currentCandidate?.name },
+            { name: currentCandidate?.firstName },
           ]}
         />
 

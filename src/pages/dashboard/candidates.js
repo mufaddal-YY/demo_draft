@@ -87,11 +87,11 @@ const ROLE_OPTIONS = [
 ];
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', align: 'left' },
-  { id: 'phone', label: 'Email', align: 'left' },
-  { id: 'email', label: 'Phone', align: 'left' },
-  { id: 'city', label: 'City', align: 'center' },
-  { id: 'address', label: 'address', align: 'left' },
+  { id: 'firstName', label: 'Name', align: 'left' },
+  { id: 'email', label: 'Email', align: 'left' },
+  { id: 'phoneNumber', label: 'Phone', align: 'left' },
+  { id: 'address', label: 'Address', align: 'left' },
+  { id: 'gender', label: 'Gender', align: 'left' },
   { id: '' },
 ];
 
@@ -257,8 +257,8 @@ export default function UserListPage() {
   };
   
 
-  const handleEditRow = (_id) => {
-    push(PATH_DASHBOARD.candidate.edit(paramCase(_id)));
+  const handleEditRow = (firstName) => {
+    push(PATH_DASHBOARD.candidate.edit(paramCase(firstName)));
   };
 
   const handleResetFilter = () => {
@@ -380,7 +380,7 @@ export default function UserListPage() {
                         selected={selected.includes(row._id)}
                         onSelectRow={() => onSelectRow(row._id)}
                         onDeleteRow={() => handleDeleteRow(row._id)}
-                        onEditRow={() => handleEditRow(row.name)}
+                        onEditRow={() => handleEditRow(row.firstName)}
                       />
                     ))}
 
