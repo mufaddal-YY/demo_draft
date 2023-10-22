@@ -21,14 +21,6 @@ const OPTIONS = [
     label: 'Home',
     linkTo: '/',
   },
-  {
-    label: 'Profile',
-    linkTo: PATH_DASHBOARD.candidate.profile,
-  },
-  {
-    label: 'Settings',
-    linkTo: PATH_DASHBOARD.candidate.account,
-  },
 ];
 
 // ----------------------------------------------------------------------
